@@ -9,6 +9,7 @@ import { Ambient } from "../components/Ambient.jsx";
 import { Categories, Privacy } from "./Sections.jsx";
 import { DEMOS } from "./Demos.jsx";
 import mascotUrl from "../assets/paul-mascot.svg";
+import storeBadgeUrl from "../assets/chrome-webstore-badge.png";
 
 const AmbientBg = Ambient;
 
@@ -81,6 +82,24 @@ function LandingCta({ v = "sweep", size = "lg", children, href = STORE_URL, styl
   );
 }
 
+/* ---------- Official Chrome Web Store badge ----------
+   Per Google branding guidelines: link to the listing, resize only
+   (keep aspect ratio), never recolor or otherwise modify the artwork. */
+function StoreBadge({ height = 52, style }) {
+  const [h, setH] = React.useState(false);
+  return (
+    <a
+      href={STORE_URL}
+      aria-label="Available in the Chrome Web Store"
+      onMouseEnter={() => setH(true)}
+      onMouseLeave={() => setH(false)}
+      style={{ display: "inline-block", lineHeight: 0, borderRadius: 8, transition: "transform 0.25s var(--ease-reveal), box-shadow 0.25s", transform: h ? "translateY(-2px)" : "none", boxShadow: h ? "0 10px 30px rgba(0,0,0,0.28)" : "0 4px 16px rgba(0,0,0,0.18)", ...style }}
+    >
+      <img src={storeBadgeUrl} alt="Available in the Chrome Web Store" style={{ height, width: "auto", display: "block", borderRadius: 8 }} />
+    </a>
+  );
+}
+
 /* ---------- Fixed nav — "Add to Chrome" always reachable ---------- */
 function FixedNav({ ctaV }) {
   return (
@@ -127,9 +146,12 @@ function Hero({ ctaV, ambient }) {
         <DisplayHeadline as="h1" size="hero" style={{ marginTop: 20 }}>
           AI meets *Geo-Data.*
         </DisplayHeadline>
-        <div style={{ display: "flex", alignItems: "center", gap: 20, marginTop: 48 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 20, marginTop: 48, flexWrap: "wrap" }}>
           <LandingCta v={ctaV} size="lg">Add to Chrome — it's free</LandingCta>
           <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--slate-500)" }}>100% local · no tracking · 6 languages · MIT</span>
+        </div>
+        <div style={{ marginTop: 28 }}>
+          <StoreBadge />
         </div>
       </div>
       <div aria-hidden="true" style={{ position: "relative", display: "flex", justifyContent: "center", paddingBottom: 28, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.3em", color: "var(--slate-500)", animation: "paul-pulse 3.5s ease-in-out infinite" }}>
@@ -277,6 +299,9 @@ function Outro({ ctaV, ambient }) {
       </DisplayHeadline>
       <div style={{ position: "relative", marginTop: 48 }}>
         <LandingCta v={ctaV} size="xl">Get the Extension</LandingCta>
+      </div>
+      <div style={{ position: "relative", marginTop: 32 }}>
+        <StoreBadge />
       </div>
       <footer style={{ position: "absolute", bottom: 0, left: 0, right: 0, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "24px clamp(24px, 5vw, 72px)", fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--slate-500)" }}>
         <span>Paul AI GEO Analyzer</span>
