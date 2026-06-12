@@ -90,7 +90,6 @@ function FixedNav({ ctaV }) {
         <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, letterSpacing: "0.04em" }}>PAUL — AI GEO ANALYZER</span>
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 20, pointerEvents: "auto" }}>
-        <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "#fff", mixBlendMode: "difference" }}>by NETNODE</span>
         <LandingCta v={ctaV} size="sm" style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.25)" }}>Add to Chrome</LandingCta>
       </div>
     </nav>
@@ -286,7 +285,6 @@ function Outro({ ctaV, ambient }) {
           <a href="#datenschutz" style={{ color: "var(--slate-400)", textDecoration: "none" }}>Datenschutz</a>
           <a href={STORE_URL} style={{ color: "var(--slate-400)", textDecoration: "none" }}>Chrome Web Store</a>
           <a href="https://github.com/MichiMauch/geo-chrome-ext" style={{ color: "var(--slate-400)", textDecoration: "none" }}>GitHub</a>
-          <a href="https://www.netnode.ch" style={{ color: "var(--slate-400)", textDecoration: "none" }}>by NETNODE — netnode.ch</a>
         </span>
       </footer>
     </section>
