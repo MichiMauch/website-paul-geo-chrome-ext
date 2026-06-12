@@ -1,0 +1,89 @@
+/* ============================================================
+   Paul AI GEO Analyzer — Color tokens
+   Source of truth: geo-analyzer-extension/src/popup/popup.css,
+   src/utils/export-html.ts, src/utils/scoring.ts
+   ============================================================ */
+
+:root {
+  /* ---- Brand / accent (teal) ---- */
+  --teal-300: #5EEAEA;          /* dark-mode accent text */
+  --teal-400: #33CCCC;          /* primary accent — "Paul teal" */
+  --teal-500: #2BA3A3;          /* deep accent, text-on-light */
+  --teal-700: #0f766e;          /* gradient anchor (report hero) */
+  --teal-tint: #E6FAFA;         /* hover surfaces on light */
+  --teal-a08: rgba(51, 204, 204, 0.08);
+  --teal-a12: rgba(51, 204, 204, 0.12);
+  --teal-a18: rgba(51, 204, 204, 0.18);
+  --teal-border: rgba(43, 163, 163, 0.30);
+  --teal-border-soft: rgba(43, 163, 163, 0.18);
+
+  /* ---- Brand gradient (header / hero / primary buttons) ---- */
+  --gradient-brand: linear-gradient(to right, #33CCCC, #2BA3A3); /* @kind color */
+  --gradient-brand-deep: linear-gradient(135deg, #0f766e 0%, #2BA3A3 50%, #33CCCC 100%); /* @kind color */
+
+  /* ---- Neutrals (Tailwind slate) ---- */
+  --slate-50:  #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --slate-950: #020617;
+
+  /* gray ramp (popup surfaces use Tailwind gray) */
+  --gray-50:  #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-400: #9ca3af;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* ---- Score / rating ramp (0–5 per category) ---- */
+  --score-excellent: #22c55e;   /* >= 4 */
+  --score-good:      #84cc16;   /* >= 3 */
+  --score-moderate:  #eab308;   /* >= 2 */
+  --score-poor:      #ef4444;   /* < 2  */
+
+  /* ---- Semantic ---- */
+  --success:        #10b981;
+  --success-deep:   #047857;
+  --warning:        #f59e0b;
+  --warning-deep:   #b45309;
+  --danger:         #ef4444;
+  --danger-deep:    #dc2626;
+  --info:           #3b82f6;
+
+  /* ---- Semantic aliases: light surfaces ---- */
+  --bg-app:        var(--slate-50);
+  --surface-card:  #ffffff;
+  --surface-code:  var(--slate-900);
+  --text-body:     var(--slate-900);
+  --text-muted:    var(--slate-500);
+  --text-subtle:   var(--slate-400);
+  --text-accent:   var(--teal-500);
+  --border-default: var(--gray-200);
+  --track:         #eef2f6;
+
+  /* ---- Landing ("Bold & Minimal") palette ---- */
+  --ink:          #0a0a0a;      /* near-black canvas */
+  --paper:        #fafafa;      /* off-white canvas */
+  --landing-accent: var(--teal-400); /* the single loud accent */
+}
+
+/* Dark scope — apply .dark on a container (extension supports both modes) */
+.dark {
+  --bg-app:        var(--gray-900);
+  --surface-card:  var(--gray-800);
+  --surface-code:  var(--slate-950);
+  --text-body:     #ffffff;
+  --text-muted:    var(--gray-400);
+  --text-subtle:   var(--slate-500);
+  --text-accent:   var(--teal-300);
+  --border-default: var(--gray-700);
+  --track:         var(--gray-700);
+}

@@ -1,0 +1,10 @@
+/* ============================================================
+   Webfonts — Archivo (display voice for "Bold & Minimal" landing)
+   SUBSTITUTION: the brand has no licensed display face on file.
+   Brief asks for "Inter, Helvetica Now or a striking display
+   face" — Archivo (variable width/weight) from Google Fonts is
+   the stand-in. Replace with licensed files if provided.
+   Extension UI itself uses the system stack (no webfont).
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap");

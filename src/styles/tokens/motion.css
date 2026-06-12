@@ -1,0 +1,42 @@
+/* Ambient motion keyframes for landing surfaces (consumed by the Ambient component). */
+
+@keyframes paul-drift-a {
+  0%, 100% { transform: translate3d(-12%, -8%, 0) scale(1); }
+  50% { transform: translate3d(16%, 10%, 0) scale(1.28); }
+}
+
+@keyframes paul-drift-b {
+  0%, 100% { transform: translate3d(10%, 12%, 0) scale(1.15); }
+  33% { transform: translate3d(-6%, -2%, 0) scale(1.02); }
+  66% { transform: translate3d(-16%, -10%, 0) scale(0.88); }
+}
+
+@keyframes paul-pulse {
+  0%, 100% { opacity: 0.45; transform: scale(0.96); }
+  50% { opacity: 1; transform: scale(1.06); }
+}
+
+@keyframes paul-scan {
+  0% { top: -8%; opacity: 0; }
+  8% { opacity: 1; }
+  92% { opacity: 1; }
+  100% { top: 108%; opacity: 0; }
+}
+
+@keyframes paul-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes paul-grain {
+  0% { background-position: 0 0; }
+  20% { background-position: -64px 40px; }
+  40% { background-position: 42px -58px; }
+  60% { background-position: -28px -32px; }
+  80% { background-position: 54px 22px; }
+  100% { background-position: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-ambient], [data-ambient] * { animation: none !important; }
+}
