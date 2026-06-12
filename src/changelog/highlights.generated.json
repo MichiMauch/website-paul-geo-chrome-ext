@@ -1,37 +1,37 @@
 {
-  "intro": "Paul AI GEO Analyzer helps users optimize their web pages for AI search and traditional SEO. It provides actionable insights and recommendations to improve visibility and performance.",
+  "intro": "Paul AI GEO Analyzer helps you optimize your website for AI search and classic SEO. It provides actionable insights to improve your site's visibility and performance.",
   "highlights": [
     {
       "title": "New Domain Overview",
-      "description": "Easily see all analyzed pages of your website at a glance, with the weakest pages listed first for quick action."
+      "description": "Easily see all analyzed pages of your website, sorted by those needing the most attention, so you can prioritize improvements."
     },
     {
-      "title": "Direct Recommendations",
-      "description": "Get tailored suggestions right under your score, highlighting the most impactful areas for improvement."
+      "title": "Focus on Key Recommendations",
+      "description": "Get a clear, actionable instruction on the most critical area to improve, helping you focus your efforts effectively."
     },
     {
-      "title": "User-Friendly Guidance",
-      "description": "Instead of error messages, receive friendly instructions on what to do next when switching pages."
-    },
-    {
-      "title": "In-Page Issue Highlighting",
-      "description": "Visually identify issues directly on your page with markers that guide you to the areas needing attention."
-    },
-    {
-      "title": "Canonical Tag Checks",
-      "description": "Ensure your canonical tags are correctly set up to avoid SEO pitfalls, with clear color-coded statuses."
-    },
-    {
-      "title": "Readability Scores",
-      "description": "Assess the readability of your content with scores that help you simplify complex texts for better engagement."
-    },
-    {
-      "title": "International Language Support",
-      "description": "The extension now supports multiple languages, making it accessible for a wider audience."
+      "title": "User-Friendly Notifications",
+      "description": "Switching pages now provides friendly guidance instead of error messages, making it easier to navigate the tool."
     },
     {
       "title": "One-Click Fix Snippets",
-      "description": "Quickly generate and copy code snippets to implement recommended changes without hassle."
+      "description": "Quickly copy code snippets for recommended fixes, turning analysis into easy implementation without needing technical skills."
+    },
+    {
+      "title": "Enhanced Readability Scores",
+      "description": "Understand how easy your content is to read with new readability scores, helping you create more engaging text."
+    },
+    {
+      "title": "Comprehensive Schema Validation",
+      "description": "Ensure your content meets schema requirements, improving its chances of being understood and displayed correctly by search engines."
+    },
+    {
+      "title": "AI Citation Readiness Check",
+      "description": "Assess how well your content can be cited by AI systems, enhancing its relevance in AI-driven searches."
+    },
+    {
+      "title": "International Language Support",
+      "description": "Use the extension in your preferred language, making it accessible and user-friendly for a global audience."
     }
   ],
   "model": "gpt-4o-mini"

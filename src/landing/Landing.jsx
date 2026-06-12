@@ -7,6 +7,7 @@ import { MediaPlaceholder } from "../components/MediaPlaceholder.jsx";
 import { StackDeck, StackCard } from "../components/StackCard.jsx";
 import { Ambient } from "../components/Ambient.jsx";
 import { Categories, Privacy } from "./Sections.jsx";
+import { StatsSection } from "./StatsSection.jsx";
 import { DEMOS } from "./Demos.jsx";
 import mascotUrl from "../assets/paul-mascot.svg";
 import storeBadgeUrl from "../assets/chrome-webstore-badge.png";
@@ -331,6 +332,7 @@ export default function Landing() {
         {FEATURES.map((f, i) => <FeatureCard key={i} f={f} i={i} ambient={ambient} demos={demos} />)}
       </StackDeck>
       <Privacy ambient={ambient} />
+      <StatsSection />
       <Outro ctaV={ctaV} ambient={ambient} />
       {grain && <Grain />}
       {cursor && <CursorFollower />}
