@@ -28,7 +28,7 @@ const CONFIG = {
   cursor: true,
 };
 
-const STORE_URL = "https://chrome.google.com/webstore";
+const STORE_URL = "https://chromewebstore.google.com/detail/paul-ai-geo-analyzer/eemhdjjmecfgooahgoknmolojnjmiiic";
 
 /* ---------- Landing CTA — oversized display-face link ---------- */
 function LandingCta({ v = "sweep", size = "lg", children, href = STORE_URL, style }) {
