@@ -1,6 +1,7 @@
-// Legal pages — Impressum & Datenschutzerklärung.
+// Legal pages — Legal Notice (Impressum) & Privacy Policy (Datenschutz).
 // Rendered via hash routing (#impressum / #datenschutz) from main.jsx,
 // so no router dependency is needed. Styled to match the landing palette.
+// English is the primary language. The comprehensive policy lives at /privacy.
 import React from "react";
 import mascotUrl from "../assets/paul-mascot.svg";
 
@@ -8,7 +9,7 @@ const PROVIDER = {
   name: "Michael Mauch",
   street: "Hardstrasse 15c",
   city: "5037 Muhen",
-  country: "Schweiz",
+  country: "Switzerland",
   email: "michi@mauch.ai",
 };
 
@@ -54,7 +55,7 @@ function TopBar() {
         <img src={mascotUrl} alt="Paul" style={{ width: 26, height: 26 }} />
         <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: "0.04em" }}>PAUL — AI GEO ANALYZER</span>
       </a>
-      <a href="#" style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--slate-600)", textDecoration: "none" }}>← Zurück zur Startseite</a>
+      <a href="#" style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--slate-600)", textDecoration: "none" }}>← Back to home</a>
     </div>
   );
 }
@@ -62,10 +63,10 @@ function TopBar() {
 function Impressum() {
   return (
     <>
-      <h1 style={h1}>Impressum</h1>
-      <p style={{ ...p, marginTop: 24 }}>Angaben gemäss schweizerischem Recht.</p>
+      <h1 style={h1}>Legal Notice</h1>
+      <p style={{ ...p, marginTop: 24 }}>Information pursuant to Swiss law.</p>
 
-      <h2 style={h2}>Verantwortlich für diese Website</h2>
+      <h2 style={h2}>Responsible for this website</h2>
       <p style={p}>
         {PROVIDER.name}<br />
         {PROVIDER.street}<br />
@@ -73,26 +74,25 @@ function Impressum() {
         {PROVIDER.country}
       </p>
 
-      <h2 style={h2}>Kontakt</h2>
+      <h2 style={h2}>Contact</h2>
       <p style={p}>
-        E-Mail: <a style={link} href={`mailto:${PROVIDER.email}`}>{PROVIDER.email}</a>
+        E-mail: <a style={link} href={`mailto:${PROVIDER.email}`}>{PROVIDER.email}</a>
       </p>
 
-      <h2 style={h2}>Haftungsausschluss</h2>
+      <h2 style={h2}>Disclaimer</h2>
       <p style={p}>
-        Die Inhalte dieser Website wurden mit grösstmöglicher Sorgfalt erstellt. Für die Richtigkeit,
-        Vollständigkeit und Aktualität der Inhalte wird jedoch keine Gewähr übernommen.
+        The contents of this website were created with the greatest possible care. However, no
+        guarantee is given for the accuracy, completeness or timeliness of the content.
       </p>
       <p style={p}>
-        Diese Website verweist mit Links auf externe Websites Dritter, auf deren Inhalte kein Einfluss
-        besteht. Für diese fremden Inhalte ist stets der jeweilige Anbieter verantwortlich.
+        This website contains links to external third-party websites over whose content we have no
+        influence. The respective provider is always responsible for such third-party content.
       </p>
 
-      <h2 style={h2}>Urheberrecht</h2>
+      <h2 style={h2}>Copyright</h2>
       <p style={p}>
-        Die durch den Betreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem
-        schweizerischen Urheberrecht. Die Chrome-Erweiterung „Paul AI GEO Analyzer" ist quelloffen
-        unter der MIT-Lizenz verfügbar: {" "}
+        The content and works created by the operator on these pages are subject to Swiss copyright
+        law. The “Paul AI GEO Analyzer” Chrome extension is open source under the MIT license:{" "}
         <a style={link} href="https://github.com/MichiMauch/geo-chrome-ext">github.com/MichiMauch/geo-chrome-ext</a>.
       </p>
     </>
@@ -102,69 +102,71 @@ function Impressum() {
 function Datenschutz() {
   return (
     <>
-      <h1 style={h1}>Datenschutz&shy;erklärung</h1>
+      <h1 style={h1}>Privacy Policy</h1>
       <p style={{ ...p, marginTop: 24 }}>
-        Diese Datenschutzerklärung informiert über die Bearbeitung von Personendaten beim Besuch
-        dieser Website gemäss dem schweizerischen Datenschutzgesetz (revDSG) und – soweit anwendbar –
-        der EU-Datenschutz-Grundverordnung (DSGVO).
+        This policy explains how personal data is processed when you visit this website, under the
+        Swiss Federal Act on Data Protection (FADP/revDSG) and — where applicable — the EU General
+        Data Protection Regulation (GDPR).
+      </p>
+      <p style={{ ...p, fontStyle: "italic" }}>
+        For the full privacy policy that also covers the Paul AI GEO Analyzer Chrome extension, see{" "}
+        <a style={link} href="/privacy">geo.mauch.rocks/privacy</a>.
       </p>
 
-      <h2 style={h2}>Verantwortliche Stelle</h2>
+      <h2 style={h2}>Controller</h2>
       <p style={p}>
         {PROVIDER.name}<br />
         {PROVIDER.street}, {PROVIDER.city}, {PROVIDER.country}<br />
-        E-Mail: <a style={link} href={`mailto:${PROVIDER.email}`}>{PROVIDER.email}</a>
+        E-mail: <a style={link} href={`mailto:${PROVIDER.email}`}>{PROVIDER.email}</a>
       </p>
 
-      <h2 style={h2}>Bearbeitung von Personendaten</h2>
+      <h2 style={h2}>Processing of personal data</h2>
       <p style={p}>
-        Grundsätzlich können Sie diese Website besuchen, ohne Angaben zu Ihrer Person zu machen.
-        Beim Aufruf der Seiten werden durch den Hosting-Provider technisch notwendige Daten in
-        Server-Logfiles bearbeitet (u. a. anonymisierte IP-Adresse, Datum und Uhrzeit des Zugriffs,
-        aufgerufene Seite, übertragene Datenmenge, Browsertyp). Diese Bearbeitung dient dem sicheren
-        und stabilen Betrieb der Website.
+        In principle you can visit this website without providing any personal information. When pages
+        are requested, the hosting provider processes technically necessary data in server log files
+        (including an anonymized IP address, date and time of access, the page requested, the volume
+        of data transferred and the browser type). This processing serves the secure and stable
+        operation of the website.
       </p>
 
       <h2 style={h2}>Hosting</h2>
       <p style={p}>
-        Diese Website wird auf Infrastruktur der Hetzner Online GmbH (Industriestr. 25, 91710
-        Gunzenhausen, Deutschland) betrieben. Die Daten werden in Rechenzentren innerhalb der EU
-        verarbeitet.
+        This website is operated on infrastructure of Hetzner Online GmbH (Industriestr. 25, 91710
+        Gunzenhausen, Germany). Data is processed in data centers within the EU.
       </p>
 
-      <h2 style={h2}>Webanalyse mit Matomo</h2>
+      <h2 style={h2}>Web analytics with Matomo</h2>
       <p style={p}>
-        Zur statistischen Auswertung der Websitenutzung setzen wir Matomo ein – eine Open-Source-
-        Analysesoftware, die auf eigener Infrastruktur ({" "}
-        <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.92em" }}>matomo.kokomo.house</span>{" "})
-        gehostet wird. Es werden keine Analysedaten an Dritte weitergegeben.
+        To analyze website usage statistically we use Matomo — open-source analytics software hosted on
+        our own infrastructure ({" "}
+        <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.92em" }}>matomo.kokomo.house</span>{" "}).
+        No analytics data is shared with third parties.
       </p>
       <p style={p}>
-        Matomo ist hier <strong>cookielos</strong> konfiguriert – es werden keine Cookies gesetzt und
-        keine geräteübergreifende Wiedererkennung vorgenommen. IP-Adressen werden anonymisiert
-        verarbeitet. Aus diesem Grund ist für die Nutzung keine Einwilligung über ein Cookie-Banner
-        erforderlich; die Bearbeitung erfolgt auf Grundlage des berechtigten Interesses an einer
-        bedarfsgerechten Gestaltung der Website.
-      </p>
-
-      <h2 style={h2}>Keine Daten der Chrome-Erweiterung</h2>
-      <p style={p}>
-        Die beworbene Chrome-Erweiterung „Paul AI GEO Analyzer" analysiert Webseiten zu 100 % lokal
-        im Browser. Es werden dabei keine Inhalte oder Analyseergebnisse an Server übermittelt – weder
-        an uns noch an Dritte.
+        Matomo is configured <strong>cookieless</strong> here — no cookies are set and no cross-device
+        recognition takes place. IP addresses are processed anonymized. For this reason no consent via a
+        cookie banner is required; the processing is based on the legitimate interest in a
+        needs-based design of the website.
       </p>
 
-      <h2 style={h2}>Ihre Rechte</h2>
+      <h2 style={h2}>No data from the Chrome extension</h2>
       <p style={p}>
-        Sie haben im Rahmen der gesetzlichen Vorgaben das Recht auf Auskunft über die zu Ihrer Person
-        bearbeiteten Daten sowie auf deren Berichtigung oder Löschung. Wenden Sie sich dazu an die oben
-        genannte Kontaktadresse.
+        The advertised “Paul AI GEO Analyzer” Chrome extension analyzes web pages 100% locally in the
+        browser. No content or analysis results are transmitted to any server — neither to us nor to
+        third parties.
       </p>
 
-      <h2 style={h2}>Änderungen</h2>
+      <h2 style={h2}>Your rights</h2>
       <p style={p}>
-        Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen
-        rechtlichen Anforderungen entspricht.
+        Within the limits of the applicable law, you have the right to information about the personal
+        data we process about you, as well as the right to its rectification or erasure. To exercise
+        these rights, please use the contact address above.
+      </p>
+
+      <h2 style={h2}>Changes</h2>
+      <p style={p}>
+        We reserve the right to update this privacy policy so that it always complies with current
+        legal requirements.
       </p>
     </>
   );
@@ -177,9 +179,10 @@ export function LegalPage({ page }) {
       <div style={inner}>
         {page === "impressum" ? <Impressum /> : <Datenschutz />}
         <p style={{ ...p, marginTop: 56, fontSize: 13, color: "var(--slate-500)" }}>
-          <a href="#tech-changelog" style={{ ...link, marginRight: 20 }}>Tech-Changelog</a>
-          <a href="#impressum" style={{ ...link, marginRight: 20 }}>Impressum</a>
-          <a href="#datenschutz" style={link}>Datenschutz</a>
+          <a href="#tech-changelog" style={{ ...link, marginRight: 20 }}>Tech Changelog</a>
+          <a href="/privacy" style={{ ...link, marginRight: 20 }}>Privacy</a>
+          <a href="#impressum" style={{ ...link, marginRight: 20 }}>Legal Notice</a>
+          <a href="#datenschutz" style={link}>Privacy Policy</a>
         </p>
       </div>
     </div>
