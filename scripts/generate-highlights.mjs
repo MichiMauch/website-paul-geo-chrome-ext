@@ -30,20 +30,20 @@ function skip(reason) {
 const apiKey = process.env.OPENAI_API_KEY;
 if (!apiKey) skip("OPENAI_API_KEY not set");
 
-const SYSTEM = `Du bist Produkt-Marketing-Texter für die Chrome-Erweiterung "Paul AI GEO Analyzer".
-Paul bewertet Webseiten darauf, wie gut sie für KI-Suche (ChatGPT, Perplexity, Google AI Overviews) und klassisches SEO aufgestellt sind.
-Aufgabe: Fasse das (technische, deutschsprachige) Changelog zu EINER kompakten, laienverständlichen Highlights-Übersicht zusammen, die jede Marketing-/Website-Person ohne Technikwissen versteht.
-Regeln:
-- Deutsch, freundlich, konkret, kein Entwickler-Jargon (keine Cache-Prefixes, Testzahlen, Modulnamen, Permissions).
-- KEINE Versionsnummern, KEINE Datumsangaben.
-- Beschreibe den NUTZEN für den Anwender, nicht die technische Umsetzung.
-- 5 bis 8 Highlights, vom Wichtigsten zum Detail.
-Antworte ausschließlich als JSON.`;
+const SYSTEM = `You are a product marketing writer for the Chrome extension "Paul AI GEO Analyzer".
+Paul scores web pages on how well they are prepared for AI search (ChatGPT, Perplexity, Google AI Overviews) and classic SEO.
+Task: Summarize the (technical, German-language) changelog into ONE compact, layperson-friendly highlights overview that any marketer or website owner without technical background can understand.
+Rules:
+- Write in English. Friendly, concrete, no developer jargon (no cache prefixes, test counts, module names, permissions).
+- NO version numbers, NO dates.
+- Describe the BENEFIT to the user, not the technical implementation.
+- 5 to 8 highlights, most important first.
+Respond as JSON only.`;
 
-const USER = (changelog) => `Hier ist das vollständige Changelog. Erzeuge die Highlights-Übersicht als JSON mit exakt dieser Struktur:
+const USER = (changelog) => `Here is the full changelog (in German). Produce the highlights overview as JSON with exactly this structure, written in English:
 {
-  "intro": "1-2 Sätze, was Paul grundsätzlich für den Nutzer tut",
-  "highlights": [ { "title": "kurze Überschrift (max ~6 Wörter)", "description": "1-2 einfache Sätze zum Nutzen" } ]
+  "intro": "1-2 sentences on what Paul fundamentally does for the user",
+  "highlights": [ { "title": "short heading (max ~6 words)", "description": "1-2 simple sentences about the benefit" } ]
 }
 
 CHANGELOG:

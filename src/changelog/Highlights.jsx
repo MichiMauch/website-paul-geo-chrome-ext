@@ -20,7 +20,7 @@ function TopBar() {
         <img src={mascotUrl} alt="Paul" style={{ width: 26, height: 26 }} />
         <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: "0.04em" }}>PAUL — AI GEO ANALYZER</span>
       </a>
-      <a href="#" style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--slate-600)", textDecoration: "none" }}>← Zurück zur Startseite</a>
+      <a href="#" style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--slate-600)", textDecoration: "none" }}>← Back to home</a>
     </div>
   );
 }
@@ -31,7 +31,7 @@ export function HighlightsPage() {
     <div style={wrap}>
       <TopBar />
       <div style={inner}>
-        <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--teal-500)" }}>Was Paul kann</span>
+        <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--teal-500)" }}>What Paul does</span>
         <h1 style={{ ...h1, marginTop: 12 }}>Changelog</h1>
         {data.intro && (
           <p style={{ fontSize: "clamp(16px, 1.5vw, 21px)", lineHeight: 1.55, color: "var(--slate-700)", maxWidth: "52ch", margin: "0 0 8px" }}>
@@ -58,7 +58,7 @@ export function HighlightsPage() {
             Add to Chrome →
           </a>
           <a href="#tech-changelog" style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--slate-500)", textDecoration: "none" }}>
-            Vollständiger technischer Changelog →
+            Full technical changelog →
           </a>
         </div>
       </div>

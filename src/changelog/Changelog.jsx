@@ -39,7 +39,7 @@ function TopBar() {
         <img src={mascotUrl} alt="Paul" style={{ width: 26, height: 26 }} />
         <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: "0.04em" }}>PAUL — AI GEO ANALYZER</span>
       </a>
-      <a href="#" style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--slate-600)", textDecoration: "none" }}>← Zurück zur Startseite</a>
+      <a href="#" style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--slate-600)", textDecoration: "none" }}>← Back to home</a>
     </div>
   );
 }
@@ -78,17 +78,17 @@ export function ChangelogPage() {
       <div style={inner}>
         <h1 style={h1}>Changelog</h1>
         <p style={{ fontSize: "clamp(15px, 1.2vw, 17px)", lineHeight: 1.6, color: "var(--slate-600)", margin: "0 0 8px" }}>
-          Alle Änderungen der Paul AI GEO Analyzer Chrome-Extension.
+          Every change to the Paul AI GEO Analyzer Chrome extension.
         </p>
 
         {state.status === "loading" && (
-          <p style={{ marginTop: 40, fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--slate-500)" }}>Lädt Changelog …</p>
+          <p style={{ marginTop: 40, fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--slate-500)" }}>Loading changelog …</p>
         )}
 
         {state.status === "error" && (
           <p style={{ marginTop: 40, fontSize: 15, color: "var(--slate-600)" }}>
-            Der Changelog konnte gerade nicht geladen werden. Du findest ihn jederzeit{" "}
-            <a style={link} href={REPO_CHANGELOG}>direkt auf GitHub</a>.
+            The changelog couldn't be loaded right now. You can always find it{" "}
+            <a style={link} href={REPO_CHANGELOG}>directly on GitHub</a>.
           </p>
         )}
 

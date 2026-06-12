@@ -1,37 +1,37 @@
 {
-  "intro": "Paul AI GEO Analyzer hilft Ihnen, Ihre Webseite für KI-Suchen und klassisches SEO zu optimieren. Die Erweiterung bietet klare Analysen und umsetzbare Empfehlungen, um Ihre Sichtbarkeit zu verbessern.",
+  "intro": "Paul AI GEO Analyzer helps users optimize their web pages for AI search and traditional SEO. It provides actionable insights and recommendations to improve visibility and performance.",
   "highlights": [
     {
-      "title": "Neue Domain-Übersicht",
-      "description": "Sie sehen jetzt alle analysierten Seiten Ihrer Webseite auf einen Blick, sortiert nach Handlungsbedarf. So wissen Sie sofort, wo Sie ansetzen müssen."
+      "title": "New Domain Overview",
+      "description": "Easily see all analyzed pages of your website at a glance, with the weakest pages listed first for quick action."
     },
     {
-      "title": "Fokus auf größte Schwäche",
-      "description": "Eine neue Fokus-Zeile zeigt Ihnen die wichtigste Kategorie, die verbessert werden sollte, damit Sie gezielt handeln können."
+      "title": "Direct Recommendations",
+      "description": "Get tailored suggestions right under your score, highlighting the most impactful areas for improvement."
     },
     {
-      "title": "Freundliche Hinweise bei Tab-Wechsel",
-      "description": "Wenn Sie den Tab wechseln, erhalten Sie klare Anweisungen, wie Sie die Analyse für die neue Seite starten können, anstatt auf Fehler zu stoßen."
+      "title": "User-Friendly Guidance",
+      "description": "Instead of error messages, receive friendly instructions on what to do next when switching pages."
     },
     {
-      "title": "In-Page Highlighting",
-      "description": "Wichtige Probleme werden direkt auf Ihrer Webseite markiert, sodass Sie sofort sehen, wo Verbesserungen nötig sind."
+      "title": "In-Page Issue Highlighting",
+      "description": "Visually identify issues directly on your page with markers that guide you to the areas needing attention."
     },
     {
-      "title": "Erweiterte Empfehlungen",
-      "description": "Die Empfehlungen sind jetzt direkt unter dem Score sichtbar, was den Lesefluss verbessert und Ihnen hilft, schnell zu verstehen, was zu tun ist."
+      "title": "Canonical Tag Checks",
+      "description": "Ensure your canonical tags are correctly set up to avoid SEO pitfalls, with clear color-coded statuses."
     },
     {
-      "title": "Verbesserte Fehlererklärungen",
-      "description": "Im HTML-Report erhalten Sie detaillierte Erklärungen zu jedem Kriterium, damit Sie genau wissen, was verbessert werden muss."
+      "title": "Readability Scores",
+      "description": "Assess the readability of your content with scores that help you simplify complex texts for better engagement."
     },
     {
-      "title": "Internationalisierung",
-      "description": "Die Benutzeroberfläche wird nun in Ihrer bevorzugten Sprache angezeigt, was die Nutzung noch einfacher macht."
+      "title": "International Language Support",
+      "description": "The extension now supports multiple languages, making it accessible for a wider audience."
     },
     {
-      "title": "Dark Mode",
-      "description": "Die Erweiterung unterstützt jetzt einen Dark Mode, der automatisch erkannt wird und Ihre Augen schont."
+      "title": "One-Click Fix Snippets",
+      "description": "Quickly generate and copy code snippets to implement recommended changes without hassle."
     }
   ],
   "model": "gpt-4o-mini"
