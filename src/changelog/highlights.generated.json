@@ -1,37 +1,37 @@
 {
-  "intro": "Paul AI GEO Analyzer helps you optimize your website for AI search and classic SEO. It provides actionable insights to improve your site's visibility and performance.",
+  "intro": "Paul AI GEO Analyzer helps you optimize your website for AI search and classic SEO by scoring your pages and providing actionable recommendations.",
   "highlights": [
     {
       "title": "New Domain Overview",
-      "description": "Easily see all analyzed pages of your website, sorted by those needing the most attention, so you can prioritize improvements."
+      "description": "Easily view all analyzed pages of your website, sorted by those needing the most attention, so you can prioritize improvements."
     },
     {
-      "title": "Focus on Key Recommendations",
-      "description": "Get a clear, actionable instruction on the most critical area to improve, helping you focus your efforts effectively."
+      "title": "Focused Recommendations",
+      "description": "Get a clear, actionable instruction for the weakest area of your page, making it easier to understand what to fix."
     },
     {
-      "title": "User-Friendly Notifications",
-      "description": "Switching pages now provides friendly guidance instead of error messages, making it easier to navigate the tool."
+      "title": "User-Friendly Navigation",
+      "description": "Switching pages now provides friendly guidance instead of error messages, enhancing your user experience."
     },
     {
       "title": "One-Click Fix Snippets",
-      "description": "Quickly copy code snippets for recommended fixes, turning analysis into easy implementation without needing technical skills."
+      "description": "Quickly copy code snippets for recommended fixes, turning diagnostics into easy implementations."
     },
     {
-      "title": "Enhanced Readability Scores",
-      "description": "Understand how easy your content is to read with new readability scores, helping you create more engaging text."
+      "title": "In-Page Issue Highlighting",
+      "description": "Visually mark issues directly on your webpage, allowing you to see and address problems in real-time."
     },
     {
-      "title": "Comprehensive Schema Validation",
-      "description": "Ensure your content meets schema requirements, improving its chances of being understood and displayed correctly by search engines."
+      "title": "Comprehensive SEO Checks",
+      "description": "Evaluate your pages with new SEO criteria, ensuring they are optimized for both AI and traditional search engines."
     },
     {
-      "title": "AI Citation Readiness Check",
-      "description": "Assess how well your content can be cited by AI systems, enhancing its relevance in AI-driven searches."
+      "title": "Enhanced Readability Scoring",
+      "description": "Receive insights on how easy your content is to read, helping you create more accessible and engaging text."
     },
     {
-      "title": "International Language Support",
-      "description": "Use the extension in your preferred language, making it accessible and user-friendly for a global audience."
+      "title": "International Support",
+      "description": "The extension is now available in multiple languages, making it accessible to a wider audience."
     }
   ],
   "model": "gpt-4o-mini"

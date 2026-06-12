@@ -309,6 +309,7 @@ function Outro({ ctaV, ambient }) {
         <span>Paul AI GEO Analyzer</span>
         <span style={{ display: "flex", gap: 28, flexWrap: "wrap", justifyContent: "flex-end" }}>
           <a href="#tech-changelog" style={{ color: "var(--slate-400)", textDecoration: "none" }}>Tech-Changelog</a>
+          <a href="/privacy" style={{ color: "var(--slate-400)", textDecoration: "none" }}>Privacy</a>
           <a href="#impressum" style={{ color: "var(--slate-400)", textDecoration: "none" }}>Impressum</a>
           <a href="#datenschutz" style={{ color: "var(--slate-400)", textDecoration: "none" }}>Datenschutz</a>
           <a href={STORE_URL} style={{ color: "var(--slate-400)", textDecoration: "none" }}>Chrome Web Store</a>
