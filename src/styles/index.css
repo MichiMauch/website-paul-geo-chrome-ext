@@ -30,3 +30,49 @@ body {
   background: var(--teal-400);
   color: var(--ink);
 }
+
+/* ---- Changelog: styling for the markdown rendered from CHANGELOG.md ---- */
+.cl-prose {
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.6;
+  color: var(--slate-700);
+}
+.cl-prose h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-500);
+  margin: 22px 0 10px;
+}
+.cl-prose ul {
+  margin: 0 0 12px;
+  padding-left: 1.25em;
+}
+.cl-prose li {
+  margin: 0 0 8px;
+}
+.cl-prose li::marker {
+  color: var(--slate-400);
+}
+.cl-prose strong {
+  color: var(--ink);
+  font-weight: 650;
+}
+.cl-prose a {
+  color: var(--teal-500);
+  text-decoration: none;
+  border-bottom: 1px solid var(--teal-border);
+}
+.cl-prose code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: 4px;
+  padding: 0.08em 0.35em;
+}
+.cl-prose p {
+  margin: 0 0 12px;
+}

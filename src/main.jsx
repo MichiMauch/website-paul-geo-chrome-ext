@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Landing from "./landing/Landing.jsx";
 import { LegalPage } from "./legal/Legal.jsx";
+import { ChangelogPage } from "./changelog/Changelog.jsx";
 import "./styles/index.css";
 
 // Tiny hash router — keeps the build a single static bundle, no router dep.
@@ -20,6 +21,9 @@ function App() {
   const route = useHashRoute();
   if (route === "impressum" || route === "datenschutz") {
     return <LegalPage page={route} />;
+  }
+  if (route === "changelog") {
+    return <ChangelogPage />;
   }
   return <Landing />;
 }

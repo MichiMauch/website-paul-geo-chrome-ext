@@ -306,6 +306,7 @@ function Outro({ ctaV, ambient }) {
       <footer style={{ position: "absolute", bottom: 0, left: 0, right: 0, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "24px clamp(24px, 5vw, 72px)", fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--slate-500)" }}>
         <span>Paul AI GEO Analyzer</span>
         <span style={{ display: "flex", gap: 28, flexWrap: "wrap", justifyContent: "flex-end" }}>
+          <a href="#changelog" style={{ color: "var(--slate-400)", textDecoration: "none" }}>Changelog</a>
           <a href="#impressum" style={{ color: "var(--slate-400)", textDecoration: "none" }}>Impressum</a>
           <a href="#datenschutz" style={{ color: "var(--slate-400)", textDecoration: "none" }}>Datenschutz</a>
           <a href={STORE_URL} style={{ color: "var(--slate-400)", textDecoration: "none" }}>Chrome Web Store</a>
