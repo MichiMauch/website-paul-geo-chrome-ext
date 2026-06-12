@@ -78,8 +78,7 @@ export function ChangelogPage() {
       <div style={inner}>
         <h1 style={h1}>Changelog</h1>
         <p style={{ fontSize: "clamp(15px, 1.2vw, 17px)", lineHeight: 1.6, color: "var(--slate-600)", margin: "0 0 8px" }}>
-          Alle Änderungen der Paul AI GEO Analyzer Chrome-Extension. Live aus dem{" "}
-          <a style={link} href={REPO_CHANGELOG}>GitHub-Repository</a>.
+          Alle Änderungen der Paul AI GEO Analyzer Chrome-Extension.
         </p>
 
         {state.status === "loading" && (

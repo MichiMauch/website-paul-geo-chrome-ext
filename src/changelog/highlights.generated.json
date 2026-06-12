@@ -1,37 +1,37 @@
 {
-  "intro": "Paul AI GEO Analyzer hilft Ihnen, Ihre Webseite für KI-Suchen und klassisches SEO zu optimieren. Er analysiert Ihre Seite und gibt konkrete Verbesserungsvorschläge.",
+  "intro": "Paul AI GEO Analyzer hilft Ihnen, Ihre Webseite für KI-Suchen und klassisches SEO zu optimieren. Die Erweiterung bietet klare Analysen und umsetzbare Empfehlungen, um Ihre Sichtbarkeit zu verbessern.",
   "highlights": [
     {
-      "title": "Neuer Canonical-Tag-Check",
-      "description": "Überprüfen Sie, ob Ihre Seite den richtigen Canonical-Tag hat, um Duplicate Content zu vermeiden und die Sichtbarkeit in Suchmaschinen zu verbessern."
+      "title": "Neue Domain-Übersicht",
+      "description": "Sie sehen jetzt alle analysierten Seiten Ihrer Webseite auf einen Blick, sortiert nach Handlungsbedarf. So wissen Sie sofort, wo Sie ansetzen müssen."
     },
     {
-      "title": "In-Page Issue-Highlighting",
-      "description": "Markieren Sie direkt auf Ihrer Webseite, wo Verbesserungen nötig sind, um die Benutzerfreundlichkeit und SEO zu steigern."
+      "title": "Fokus auf größte Schwäche",
+      "description": "Eine neue Fokus-Zeile zeigt Ihnen die wichtigste Kategorie, die verbessert werden sollte, damit Sie gezielt handeln können."
     },
     {
-      "title": "Optimierte Empfehlungen",
-      "description": "Jede Empfehlung wird jetzt klarer dargestellt, sodass Sie sofort wissen, was zu tun ist, ohne technische Begriffe verstehen zu müssen."
+      "title": "Freundliche Hinweise bei Tab-Wechsel",
+      "description": "Wenn Sie den Tab wechseln, erhalten Sie klare Anweisungen, wie Sie die Analyse für die neue Seite starten können, anstatt auf Fehler zu stoßen."
     },
     {
-      "title": "Lesbarkeits-Score",
-      "description": "Erhalten Sie einen Score für die Lesbarkeit Ihrer Texte, um sicherzustellen, dass Ihre Inhalte für Leser leicht verständlich sind."
+      "title": "In-Page Highlighting",
+      "description": "Wichtige Probleme werden direkt auf Ihrer Webseite markiert, sodass Sie sofort sehen, wo Verbesserungen nötig sind."
     },
     {
-      "title": "HTML-Report Export",
-      "description": "Exportieren Sie Ihre Analyseergebnisse als professionellen HTML-Report, der alle wichtigen Informationen und Verbesserungsvorschläge enthält."
+      "title": "Erweiterte Empfehlungen",
+      "description": "Die Empfehlungen sind jetzt direkt unter dem Score sichtbar, was den Lesefluss verbessert und Ihnen hilft, schnell zu verstehen, was zu tun ist."
+    },
+    {
+      "title": "Verbesserte Fehlererklärungen",
+      "description": "Im HTML-Report erhalten Sie detaillierte Erklärungen zu jedem Kriterium, damit Sie genau wissen, was verbessert werden muss."
     },
     {
       "title": "Internationalisierung",
-      "description": "Die Benutzeroberfläche ist nun in mehreren Sprachen verfügbar, sodass Sie die Analyse in Ihrer bevorzugten Sprache durchführen können."
-    },
-    {
-      "title": "Vergleichsansicht",
-      "description": "Vergleichen Sie Ihre aktuelle Seite mit einer anderen URL, um Stärken und Schwächen direkt gegenüberzustellen."
+      "description": "Die Benutzeroberfläche wird nun in Ihrer bevorzugten Sprache angezeigt, was die Nutzung noch einfacher macht."
     },
     {
       "title": "Dark Mode",
-      "description": "Wechseln Sie in den Dark Mode für eine augenschonende Nutzung, besonders bei schlechten Lichtverhältnissen."
+      "description": "Die Erweiterung unterstützt jetzt einen Dark Mode, der automatisch erkannt wird und Ihre Augen schont."
     }
   ],
   "model": "gpt-4o-mini"
