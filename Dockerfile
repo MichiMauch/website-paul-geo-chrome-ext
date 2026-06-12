@@ -4,7 +4,12 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
-RUN npm run build
+# OpenAI key for the build-time changelog summary (scripts/generate-highlights.mjs).
+# Pass via Coolify build env / --build-arg. If absent, the build keeps the
+# committed highlights.generated.json and still succeeds.
+ARG OPENAI_API_KEY=""
+ARG OPENAI_MODEL=""
+RUN OPENAI_API_KEY="$OPENAI_API_KEY" OPENAI_MODEL="$OPENAI_MODEL" npm run build
 
 # --- Runtime stage: serve the static dist/ with nginx ---
 FROM nginx:1.27-alpine

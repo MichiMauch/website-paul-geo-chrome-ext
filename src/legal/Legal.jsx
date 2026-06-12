@@ -177,7 +177,7 @@ export function LegalPage({ page }) {
       <div style={inner}>
         {page === "impressum" ? <Impressum /> : <Datenschutz />}
         <p style={{ ...p, marginTop: 56, fontSize: 13, color: "var(--slate-500)" }}>
-          <a href="#changelog" style={{ ...link, marginRight: 20 }}>Changelog</a>
+          <a href="#tech-changelog" style={{ ...link, marginRight: 20 }}>Tech-Changelog</a>
           <a href="#impressum" style={{ ...link, marginRight: 20 }}>Impressum</a>
           <a href="#datenschutz" style={link}>Datenschutz</a>
         </p>

@@ -1,0 +1,38 @@
+{
+  "intro": "Paul AI GEO Analyzer hilft Ihnen, Ihre Webseite für KI-Suchen und klassisches SEO zu optimieren. Er analysiert Ihre Seite und gibt konkrete Verbesserungsvorschläge.",
+  "highlights": [
+    {
+      "title": "Neuer Canonical-Tag-Check",
+      "description": "Überprüfen Sie, ob Ihre Seite den richtigen Canonical-Tag hat, um Duplicate Content zu vermeiden und die Sichtbarkeit in Suchmaschinen zu verbessern."
+    },
+    {
+      "title": "In-Page Issue-Highlighting",
+      "description": "Markieren Sie direkt auf Ihrer Webseite, wo Verbesserungen nötig sind, um die Benutzerfreundlichkeit und SEO zu steigern."
+    },
+    {
+      "title": "Optimierte Empfehlungen",
+      "description": "Jede Empfehlung wird jetzt klarer dargestellt, sodass Sie sofort wissen, was zu tun ist, ohne technische Begriffe verstehen zu müssen."
+    },
+    {
+      "title": "Lesbarkeits-Score",
+      "description": "Erhalten Sie einen Score für die Lesbarkeit Ihrer Texte, um sicherzustellen, dass Ihre Inhalte für Leser leicht verständlich sind."
+    },
+    {
+      "title": "HTML-Report Export",
+      "description": "Exportieren Sie Ihre Analyseergebnisse als professionellen HTML-Report, der alle wichtigen Informationen und Verbesserungsvorschläge enthält."
+    },
+    {
+      "title": "Internationalisierung",
+      "description": "Die Benutzeroberfläche ist nun in mehreren Sprachen verfügbar, sodass Sie die Analyse in Ihrer bevorzugten Sprache durchführen können."
+    },
+    {
+      "title": "Vergleichsansicht",
+      "description": "Vergleichen Sie Ihre aktuelle Seite mit einer anderen URL, um Stärken und Schwächen direkt gegenüberzustellen."
+    },
+    {
+      "title": "Dark Mode",
+      "description": "Wechseln Sie in den Dark Mode für eine augenschonende Nutzung, besonders bei schlechten Lichtverhältnissen."
+    }
+  ],
+  "model": "gpt-4o-mini"
+}

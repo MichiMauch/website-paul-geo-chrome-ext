@@ -109,6 +109,7 @@ function FixedNav({ ctaV }) {
         <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, letterSpacing: "0.04em" }}>PAUL — AI GEO ANALYZER</span>
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 20, pointerEvents: "auto" }}>
+        <a href="#changelog" style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, textTransform: "uppercase", letterSpacing: "0.08em", color: "#fff", textDecoration: "none", mixBlendMode: "difference" }}>Changelog</a>
         <LandingCta v={ctaV} size="sm" style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.25)" }}>Add to Chrome</LandingCta>
       </div>
     </nav>
@@ -306,7 +307,7 @@ function Outro({ ctaV, ambient }) {
       <footer style={{ position: "absolute", bottom: 0, left: 0, right: 0, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "24px clamp(24px, 5vw, 72px)", fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--slate-500)" }}>
         <span>Paul AI GEO Analyzer</span>
         <span style={{ display: "flex", gap: 28, flexWrap: "wrap", justifyContent: "flex-end" }}>
-          <a href="#changelog" style={{ color: "var(--slate-400)", textDecoration: "none" }}>Changelog</a>
+          <a href="#tech-changelog" style={{ color: "var(--slate-400)", textDecoration: "none" }}>Tech-Changelog</a>
           <a href="#impressum" style={{ color: "var(--slate-400)", textDecoration: "none" }}>Impressum</a>
           <a href="#datenschutz" style={{ color: "var(--slate-400)", textDecoration: "none" }}>Datenschutz</a>
           <a href={STORE_URL} style={{ color: "var(--slate-400)", textDecoration: "none" }}>Chrome Web Store</a>

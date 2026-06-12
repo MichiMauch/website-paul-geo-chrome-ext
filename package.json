@@ -6,8 +6,10 @@
   "description": "Bold & Minimal scroll-storytelling landing page for the Paul AI GEO Analyzer Chrome extension.",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/generate-highlights.mjs",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "highlights": "node scripts/generate-highlights.mjs"
   },
   "dependencies": {
     "marked": "^18.0.5",
