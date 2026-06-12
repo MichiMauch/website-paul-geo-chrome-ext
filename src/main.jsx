@@ -39,8 +39,8 @@ function App() {
   if (route.kind === "path" && route.value === "privacy") {
     return <PrivacyPolicyPage />;
   }
-  if (route.value === "impressum" || route.value === "datenschutz") {
-    return <LegalPage page={route.value} />;
+  if (route.value === "impressum") {
+    return <LegalPage />;
   }
   if (route.value === "changelog") {
     return <HighlightsPage />;

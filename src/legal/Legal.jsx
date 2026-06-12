@@ -1,7 +1,7 @@
-// Legal pages — Legal Notice (Impressum) & Privacy Policy (Datenschutz).
-// Rendered via hash routing (#impressum / #datenschutz) from main.jsx,
-// so no router dependency is needed. Styled to match the landing palette.
-// English is the primary language. The comprehensive policy lives at /privacy.
+// Legal Notice (Impressum) page — rendered via hash routing (#impressum)
+// from main.jsx, so no router dependency is needed. Styled to match the
+// landing palette. English is the primary language. The privacy policy
+// lives separately at /privacy.
 import React from "react";
 import mascotUrl from "../assets/paul-mascot.svg";
 
@@ -99,90 +99,16 @@ function Impressum() {
   );
 }
 
-function Datenschutz() {
-  return (
-    <>
-      <h1 style={h1}>Privacy Policy</h1>
-      <p style={{ ...p, marginTop: 24 }}>
-        This policy explains how personal data is processed when you visit this website, under the
-        Swiss Federal Act on Data Protection (FADP/revDSG) and — where applicable — the EU General
-        Data Protection Regulation (GDPR).
-      </p>
-      <p style={{ ...p, fontStyle: "italic" }}>
-        For the full privacy policy that also covers the Paul AI GEO Analyzer Chrome extension, see{" "}
-        <a style={link} href="/privacy">geo.mauch.rocks/privacy</a>.
-      </p>
-
-      <h2 style={h2}>Controller</h2>
-      <p style={p}>
-        {PROVIDER.name}<br />
-        {PROVIDER.street}, {PROVIDER.city}, {PROVIDER.country}<br />
-        E-mail: <a style={link} href={`mailto:${PROVIDER.email}`}>{PROVIDER.email}</a>
-      </p>
-
-      <h2 style={h2}>Processing of personal data</h2>
-      <p style={p}>
-        In principle you can visit this website without providing any personal information. When pages
-        are requested, the hosting provider processes technically necessary data in server log files
-        (including an anonymized IP address, date and time of access, the page requested, the volume
-        of data transferred and the browser type). This processing serves the secure and stable
-        operation of the website.
-      </p>
-
-      <h2 style={h2}>Hosting</h2>
-      <p style={p}>
-        This website is operated on infrastructure of Hetzner Online GmbH (Industriestr. 25, 91710
-        Gunzenhausen, Germany). Data is processed in data centers within the EU.
-      </p>
-
-      <h2 style={h2}>Web analytics with Matomo</h2>
-      <p style={p}>
-        To analyze website usage statistically we use Matomo — open-source analytics software hosted on
-        our own infrastructure ({" "}
-        <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.92em" }}>matomo.kokomo.house</span>{" "}).
-        No analytics data is shared with third parties.
-      </p>
-      <p style={p}>
-        Matomo is configured <strong>cookieless</strong> here — no cookies are set and no cross-device
-        recognition takes place. IP addresses are processed anonymized. For this reason no consent via a
-        cookie banner is required; the processing is based on the legitimate interest in a
-        needs-based design of the website.
-      </p>
-
-      <h2 style={h2}>No data from the Chrome extension</h2>
-      <p style={p}>
-        The advertised “Paul AI GEO Analyzer” Chrome extension analyzes web pages 100% locally in the
-        browser. No content or analysis results are transmitted to any server — neither to us nor to
-        third parties.
-      </p>
-
-      <h2 style={h2}>Your rights</h2>
-      <p style={p}>
-        Within the limits of the applicable law, you have the right to information about the personal
-        data we process about you, as well as the right to its rectification or erasure. To exercise
-        these rights, please use the contact address above.
-      </p>
-
-      <h2 style={h2}>Changes</h2>
-      <p style={p}>
-        We reserve the right to update this privacy policy so that it always complies with current
-        legal requirements.
-      </p>
-    </>
-  );
-}
-
-export function LegalPage({ page }) {
+export function LegalPage() {
   return (
     <div style={wrap}>
       <TopBar />
       <div style={inner}>
-        {page === "impressum" ? <Impressum /> : <Datenschutz />}
+        <Impressum />
         <p style={{ ...p, marginTop: 56, fontSize: 13, color: "var(--slate-500)" }}>
           <a href="#tech-changelog" style={{ ...link, marginRight: 20 }}>Tech Changelog</a>
           <a href="/privacy" style={{ ...link, marginRight: 20 }}>Privacy</a>
-          <a href="#impressum" style={{ ...link, marginRight: 20 }}>Legal Notice</a>
-          <a href="#datenschutz" style={link}>Privacy Policy</a>
+          <a href="#impressum" style={link}>Legal Notice</a>
         </p>
       </div>
     </div>

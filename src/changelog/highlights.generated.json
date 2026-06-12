@@ -1,37 +1,37 @@
 {
-  "intro": "Paul AI GEO Analyzer helps users optimize their web pages for AI search and traditional SEO. It provides actionable insights to improve visibility and performance in search results.",
+  "intro": "Paul AI GEO Analyzer helps users optimize their web pages for AI search and SEO by providing actionable insights and scores. It simplifies the process of improving website visibility and performance.",
   "highlights": [
     {
       "title": "New Domain Overview",
-      "description": "Easily view all analyzed pages of your website, sorted by those needing the most attention. This helps you prioritize improvements effectively."
+      "description": "Easily see all analyzed pages of your website, with the weakest ones highlighted at the top for quick attention."
     },
     {
       "title": "Focused Recommendations",
-      "description": "Get a clear, actionable instruction based on the weakest area of your page, making it easier to understand what to fix first."
+      "description": "Get clear, actionable advice on the most critical areas to improve, making it easier to enhance your site's performance."
     },
     {
-      "title": "User-Friendly Page Switching",
-      "description": "When switching tabs, receive helpful prompts instead of error messages, ensuring a smoother experience while analyzing different pages."
+      "title": "User-Friendly Interface",
+      "description": "Switching pages now provides friendly instructions instead of error messages, improving user experience."
     },
     {
       "title": "One-Click Fix Snippets",
-      "description": "Quickly copy code snippets for recommended fixes, turning diagnostics into easy implementations without technical hassle."
+      "description": "Quickly copy code snippets for recommended fixes directly from the extension, turning diagnostics into easy implementations."
     },
     {
       "title": "In-Page Issue Highlighting",
-      "description": "Visually identify issues directly on your web page, making it easier to see and address problems as you analyze."
+      "description": "Visually identify issues directly on your web page, making it easier to understand and fix problems as you analyze."
     },
     {
-      "title": "Enhanced SEO Analysis",
-      "description": "A new category for on-page SEO checks helps you optimize your content for better search engine rankings."
+      "title": "Enhanced Readability and SEO Checks",
+      "description": "New checks for readability and SEO ensure your content is not only optimized for AI but also user-friendly."
     },
     {
-      "title": "International Language Support",
-      "description": "The extension now supports multiple languages, making it accessible for a wider audience and enhancing usability."
+      "title": "Anonymous Usage Statistics",
+      "description": "Opt-in to share anonymous data to help improve the tool without compromising your privacy."
     },
     {
-      "title": "Improved User Interface",
-      "description": "A redesigned layout and better organization of recommendations make it easier to navigate and understand your analysis results."
+      "title": "Multi-Language Support",
+      "description": "The extension is now available in multiple languages, making it accessible to a broader audience."
     }
   ],
   "model": "gpt-4o-mini"
