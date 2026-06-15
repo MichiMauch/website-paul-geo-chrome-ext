@@ -4,6 +4,7 @@
 import React from "react";
 import mascotUrl from "../assets/paul-mascot.svg";
 import data from "./highlights.generated.json";
+import { useIsMobile } from "../hooks/useIsMobile.js";
 
 const STORE_URL =
   "https://chromewebstore.google.com/detail/paul-ai-geo-analyzer/eemhdjjmecfgooahgoknmolojnjmiiic";
@@ -14,13 +15,14 @@ const h1 = { fontFamily: "var(--font-display)", fontWeight: 900, fontStretch: "1
 const link = { color: "var(--teal-500)", textDecoration: "none", borderBottom: "1px solid var(--teal-border)" };
 
 function TopBar() {
+  const isMobile = useIsMobile();
   return (
-    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "20px clamp(24px, 5vw, 48px)", position: "fixed", top: 0, left: 0, right: 0, background: "color-mix(in srgb, var(--paper) 88%, transparent)", backdropFilter: "blur(8px)", zIndex: 100 }}>
-      <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", color: "var(--ink)" }}>
-        <img src={mascotUrl} alt="Paul" style={{ width: 26, height: 26 }} />
-        <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: "0.04em" }}>PAUL — AI GEO ANALYZER</span>
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, padding: isMobile ? "16px 18px" : "20px clamp(24px, 5vw, 48px)", position: "fixed", top: 0, left: 0, right: 0, background: "color-mix(in srgb, var(--paper) 88%, transparent)", backdropFilter: "blur(8px)", zIndex: 100 }}>
+      <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, minWidth: 0, textDecoration: "none", color: "var(--ink)" }}>
+        <img src={mascotUrl} alt="Paul" style={{ width: 26, height: 26, flexShrink: 0 }} />
+        <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: "0.04em", whiteSpace: "nowrap" }}>{isMobile ? "PAUL" : "PAUL — AI GEO ANALYZER"}</span>
       </a>
-      <a href="/" style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--slate-600)", textDecoration: "none" }}>← Back to home</a>
+      <a href="/" style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--slate-600)", textDecoration: "none", whiteSpace: "nowrap", flexShrink: 0 }}>← Back to home</a>
     </div>
   );
 }

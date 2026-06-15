@@ -4,3 +4,7 @@ dist-ssr
 *.local
 .DS_Store
 .vite
+
+# Mobile audit artifacts (screenshots, DOM snapshots)
+.mobile-audit/
+auth.json

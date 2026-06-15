@@ -6,6 +6,7 @@ import { Eyebrow } from "../components/Eyebrow.jsx";
 import { MediaPlaceholder } from "../components/MediaPlaceholder.jsx";
 import { StackDeck, StackCard } from "../components/StackCard.jsx";
 import { Ambient } from "../components/Ambient.jsx";
+import { useIsMobile } from "../hooks/useIsMobile.js";
 import { Categories, Privacy } from "./Sections.jsx";
 import { StatsSection } from "./StatsSection.jsx";
 import { DEMOS } from "./Demos.jsx";
@@ -103,14 +104,17 @@ function StoreBadge({ height = 52, style }) {
 
 /* ---------- Fixed nav — "Add to Chrome" always reachable ---------- */
 function FixedNav({ ctaV }) {
+  const isMobile = useIsMobile();
   return (
-    <nav data-screen-label="Fixed nav" style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "20px clamp(24px, 5vw, 72px)", pointerEvents: "none" }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 12, mixBlendMode: "difference", color: "#fff", pointerEvents: "auto" }}>
-        <img src={mascotUrl} alt="Paul" style={{ width: 30, height: 30, filter: "brightness(0) invert(1)" }} />
-        <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, letterSpacing: "0.04em" }}>PAUL — AI GEO ANALYZER</span>
+    <nav data-screen-label="Fixed nav" style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, padding: isMobile ? "16px 18px" : "20px clamp(24px, 5vw, 72px)", pointerEvents: "none" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 8 : 12, minWidth: 0, mixBlendMode: "difference", color: "#fff", pointerEvents: "auto" }}>
+        <img src={mascotUrl} alt="Paul" style={{ width: isMobile ? 26 : 30, height: isMobile ? 26 : 30, flexShrink: 0, filter: "brightness(0) invert(1)" }} />
+        <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, letterSpacing: "0.04em", whiteSpace: "nowrap" }}>{isMobile ? "PAUL" : "PAUL — AI GEO ANALYZER"}</span>
       </div>
-      <div style={{ display: "flex", alignItems: "center", gap: 20, pointerEvents: "auto" }}>
-        <a href="/changelog" style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, textTransform: "uppercase", letterSpacing: "0.08em", color: "#fff", textDecoration: "none", mixBlendMode: "difference" }}>Changelog</a>
+      <div style={{ display: "flex", alignItems: "center", gap: 20, flexShrink: 0, pointerEvents: "auto" }}>
+        {!isMobile && (
+          <a href="/changelog" style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, textTransform: "uppercase", letterSpacing: "0.08em", color: "#fff", textDecoration: "none", mixBlendMode: "difference" }}>Changelog</a>
+        )}
         <LandingCta v={ctaV} size="sm" style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.25)" }}>Add to Chrome</LandingCta>
       </div>
     </nav>
@@ -219,16 +223,19 @@ const FEATURES = [
 
 function FeatureCard({ f, i, ambient, demos }) {
   const Demo = demos ? DEMOS[i] : null;
+  const isMobile = useIsMobile();
   return (
     <StackCard data-screen-label={`Feature ${i + 1} — ${f.eyebrow}`} background={f.bg} color={f.fg} style={{ position: "relative" }}>
       <AmbientBg variant={ambient} seed={i + 1} />
-      <div style={{ position: "relative", display: "grid", gridTemplateColumns: "minmax(0, 5fr) minmax(0, 6fr)", gap: "clamp(24px, 4vw, 64px)", alignItems: "center", padding: "0 clamp(24px, 5vw, 72px)", width: "100%", boxSizing: "border-box" }}>
+      <div style={{ position: "relative", display: "grid", gridTemplateColumns: isMobile ? "minmax(0, 1fr)" : "minmax(0, 5fr) minmax(0, 6fr)", gap: isMobile ? "clamp(20px, 5vh, 32px)" : "clamp(24px, 4vw, 64px)", alignItems: "center", padding: isMobile ? "0 22px" : "0 clamp(24px, 5vw, 72px)", width: "100%", boxSizing: "border-box" }}>
         <div>
           <Eyebrow index={`0${i + 1}`} dark={f.dark}>{f.eyebrow}</Eyebrow>
-          <DisplayHeadline size="lg" style={{ marginTop: 18 }}>{f.headline}</DisplayHeadline>
-          <p style={{ marginTop: 24, maxWidth: "40ch", fontFamily: "var(--font-sans)", fontSize: "clamp(15px, 1.2vw, 18px)", lineHeight: 1.55, color: f.dark ? "var(--slate-400)" : "var(--slate-600)" }}>{f.body}</p>
+          <DisplayHeadline size="lg" style={{ marginTop: isMobile ? 12 : 18 }}>{f.headline}</DisplayHeadline>
+          <p style={{ marginTop: isMobile ? 16 : 24, maxWidth: "40ch", fontFamily: "var(--font-sans)", fontSize: "clamp(15px, 1.2vw, 18px)", lineHeight: 1.55, color: f.dark ? "var(--slate-400)" : "var(--slate-600)" }}>{f.body}</p>
         </div>
-        {Demo ? <Demo /> : <MediaPlaceholder dark={f.dark} label={f.media} ratio="4 / 3" parallax={28} />}
+        <div style={isMobile ? { width: "100%", maxWidth: 380, margin: "0 auto" } : undefined}>
+          {Demo ? <Demo /> : <MediaPlaceholder dark={f.dark} label={f.media} ratio="4 / 3" parallax={28} />}
+        </div>
       </div>
     </StackCard>
   );
@@ -293,8 +300,9 @@ function Grain() {
 
 /* ---------- Outro ---------- */
 function Outro({ ctaV, ambient }) {
+  const isMobile = useIsMobile();
   return (
-    <section data-screen-label="Outro" style={{ minHeight: "100vh", background: "var(--ink)", color: "var(--paper)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "0 clamp(24px, 5vw, 72px)", position: "relative", overflow: "hidden" }}>
+    <section data-screen-label="Outro" style={{ minHeight: "100vh", background: "var(--ink)", color: "var(--paper)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: isMobile ? "120px clamp(24px, 5vw, 72px) 160px" : "0 clamp(24px, 5vw, 72px)", position: "relative", overflow: "hidden" }}>
       <AmbientBg variant={ambient} seed={7} />
       <DisplayHeadline size="xl" style={{ position: "relative", maxWidth: "14ch" }}>
         Stop guessing. *Start scoring.*
@@ -305,9 +313,9 @@ function Outro({ ctaV, ambient }) {
       <div style={{ position: "relative", marginTop: 32 }}>
         <StoreBadge />
       </div>
-      <footer style={{ position: "absolute", bottom: 0, left: 0, right: 0, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "24px clamp(24px, 5vw, 72px)", fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--slate-500)" }}>
-        <span>Paul AI GEO Analyzer</span>
-        <span style={{ display: "flex", gap: 28, flexWrap: "wrap", justifyContent: "flex-end" }}>
+      <footer style={{ position: "absolute", bottom: 0, left: 0, right: 0, display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: "space-between", alignItems: "center", gap: isMobile ? 14 : 0, padding: isMobile ? "0 20px 28px" : "24px clamp(24px, 5vw, 72px)", fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--slate-500)" }}>
+        <span style={{ order: isMobile ? 2 : 0 }}>Paul AI GEO Analyzer</span>
+        <span style={{ display: "flex", gap: isMobile ? "10px 18px" : 28, flexWrap: "wrap", justifyContent: "center", order: isMobile ? 1 : 0 }}>
           <a href="/tech-changelog" style={{ color: "var(--slate-400)", textDecoration: "none" }}>Tech-Changelog</a>
           <a href="/privacy" style={{ color: "var(--slate-400)", textDecoration: "none" }}>Privacy</a>
           <a href="/legal-notice" style={{ color: "var(--slate-400)", textDecoration: "none" }}>Legal Notice</a>

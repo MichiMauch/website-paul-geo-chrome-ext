@@ -3,6 +3,7 @@ import React from "react";
 import { Eyebrow } from "../components/Eyebrow.jsx";
 import { DisplayHeadline } from "../components/DisplayHeadline.jsx";
 import { Ambient } from "../components/Ambient.jsx";
+import { useIsMobile } from "../hooks/useIsMobile.js";
 
 /* ---------- "Watch Paul analyze" — sticky scroll-telling ---------- */
 const ANALYZE_STEPS = [
@@ -117,6 +118,7 @@ function MockPage({ step }) {
 export function Categories() {
   const ref = React.useRef(null);
   const [step, setStep] = React.useState(0);
+  const isMobile = useIsMobile();
 
   React.useEffect(() => {
     const el = ref.current;
@@ -139,8 +141,8 @@ export function Categories() {
 
   return (
     <section ref={ref} data-screen-label="Watch Paul analyze" style={{ position: "relative", height: `${ANALYZE_STEPS.length * 80}vh`, background: "var(--ink)", color: "var(--paper)" }}>
-      <div style={{ position: "sticky", top: 0, height: "100vh", overflow: "hidden", display: "grid", gridTemplateColumns: "minmax(0, 1.05fr) minmax(0, 0.95fr)", alignItems: "center", gap: "clamp(20px, 4vw, 72px)", padding: "0 clamp(24px, 5vw, 72px)", boxSizing: "border-box" }}>
-        <div style={{ height: "min(74vh, 620px)" }}>
+      <div style={{ position: "sticky", top: 0, height: "100vh", overflow: "hidden", display: "grid", gridTemplateColumns: isMobile ? "minmax(0, 1fr)" : "minmax(0, 1.05fr) minmax(0, 0.95fr)", alignContent: "center", alignItems: "center", gap: isMobile ? "clamp(18px, 3vh, 28px)" : "clamp(20px, 4vw, 72px)", padding: isMobile ? "76px 20px 28px" : "0 clamp(24px, 5vw, 72px)", boxSizing: "border-box" }}>
+        <div style={{ height: isMobile ? "clamp(180px, 34vh, 300px)" : "min(74vh, 620px)" }}>
           <MockPage step={step} />
         </div>
 
@@ -156,7 +158,7 @@ export function Categories() {
             0{step + 1} <span style={{ color: "var(--slate-500)" }}>/ 0{ANALYZE_STEPS.length}</span>
           </div>
 
-          <h2 style={{ margin: 0, fontFamily: "var(--font-display)", fontWeight: 600, fontStretch: "100%", fontSize: "clamp(32px, 4.6vw, 84px)", lineHeight: 1.0, letterSpacing: "var(--tracking-tight)", color: "var(--paper)" }}>
+          <h2 style={{ margin: 0, fontFamily: "var(--font-display)", fontWeight: 600, fontStretch: "100%", fontSize: isMobile ? "clamp(26px, 7vw, 84px)" : "clamp(32px, 4.6vw, 84px)", lineHeight: 1.02, letterSpacing: "var(--tracking-tight)", color: "var(--paper)" }}>
             {cur.name}
           </h2>
 
@@ -235,6 +237,7 @@ function StatNumber({ value, entered, delay = 0 }) {
 export function Privacy({ ambient = "aurora" }) {
   const AmbientBg = Ambient;
   const ref = React.useRef(null);
+  const isMobile = useIsMobile();
   const [entered, setEntered] = React.useState(false);
   React.useEffect(() => {
     let raf = 0, done = false;
@@ -265,7 +268,7 @@ export function Privacy({ ambient = "aurora" }) {
           Built on the activeTab model — no tracking, no data sent anywhere. Auto-detects your language: Deutsch, English, Français, Español, Português, Italiano.
         </p>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: "clamp(16px, 3vw, 48px)", marginTop: "clamp(32px, 6vh, 64px)", position: "relative" }}>
+      <div style={{ display: "grid", gridTemplateColumns: isMobile ? "repeat(2, minmax(0, 1fr))" : "repeat(4, minmax(0, 1fr))", gap: isMobile ? "24px 20px" : "clamp(16px, 3vw, 48px)", marginTop: "clamp(32px, 6vh, 64px)", position: "relative" }}>
         {PRIVACY_STATS.map(([num, label], i) => (
           <div key={label} style={{ borderTop: "1px solid rgba(255,255,255,0.16)", paddingTop: 18 }}>
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontStretch: "110%", fontSize: "clamp(36px, 4.5vw, 80px)", lineHeight: 1, letterSpacing: "var(--tracking-display)", color: "var(--landing-accent)" }}>

@@ -1,0 +1,13 @@
+{
+  "baseUrl": "http://localhost:5188",
+  "devices": ["Galaxy S9+", "iPhone SE", "iPhone 13 Pro"],
+  "grid": true,
+  "dom": true,
+  "routes": [
+    { "path": "/", "name": "home" },
+    { "path": "/changelog", "name": "changelog" },
+    { "path": "/tech-changelog", "name": "tech-changelog" },
+    { "path": "/privacy", "name": "privacy" },
+    { "path": "/legal-notice", "name": "legal-notice" }
+  ]
+}

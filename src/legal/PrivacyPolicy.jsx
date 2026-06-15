@@ -5,6 +5,7 @@
 // section follows. Covers both the extension and the geo.mauch.rocks website.
 import React from "react";
 import mascotUrl from "../assets/paul-mascot.svg";
+import { useIsMobile } from "../hooks/useIsMobile.js";
 
 const EFFECTIVE_DATE = "June 12, 2026";
 const CONTACT = {
@@ -20,19 +21,20 @@ const inner = { maxWidth: "72ch", margin: "0 auto", padding: "clamp(80px, 12vh, 
 const h1 = { fontFamily: "var(--font-display)", fontWeight: 900, fontStretch: "110%", textTransform: "uppercase", letterSpacing: "var(--tracking-display, 0.01em)", fontSize: "clamp(34px, 6vw, 64px)", lineHeight: 1.05, margin: "0 0 6px" };
 const h2 = { fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(19px, 2.1vw, 26px)", margin: "52px 0 14px" };
 const h3 = { fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(16px, 1.5vw, 19px)", margin: "30px 0 8px" };
-const p = { fontSize: "clamp(15px, 1.2vw, 17px)", lineHeight: 1.65, color: "var(--slate-700)", margin: "0 0 14px" };
-const li = { fontSize: "clamp(15px, 1.2vw, 17px)", lineHeight: 1.6, color: "var(--slate-700)", margin: "0 0 8px" };
-const link = { color: "var(--teal-500)", textDecoration: "none", borderBottom: "1px solid var(--teal-border)" };
-const code = { fontFamily: "var(--font-mono)", fontSize: "0.9em", background: "var(--gray-100)", border: "1px solid var(--gray-200)", borderRadius: 4, padding: "0.06em 0.34em" };
+const p = { fontSize: "clamp(15px, 1.2vw, 17px)", lineHeight: 1.65, color: "var(--slate-700)", margin: "0 0 14px", overflowWrap: "anywhere" };
+const li = { fontSize: "clamp(15px, 1.2vw, 17px)", lineHeight: 1.6, color: "var(--slate-700)", margin: "0 0 8px", overflowWrap: "anywhere" };
+const link = { color: "var(--teal-500)", textDecoration: "none", borderBottom: "1px solid var(--teal-border)", overflowWrap: "anywhere" };
+const code = { fontFamily: "var(--font-mono)", fontSize: "0.9em", background: "var(--gray-100)", border: "1px solid var(--gray-200)", borderRadius: 4, padding: "0.06em 0.34em", overflowWrap: "anywhere", wordBreak: "break-word" };
 
 function TopBar() {
+  const isMobile = useIsMobile();
   return (
-    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "20px clamp(24px, 5vw, 48px)", position: "fixed", top: 0, left: 0, right: 0, background: "color-mix(in srgb, var(--paper) 88%, transparent)", backdropFilter: "blur(8px)", zIndex: 100 }}>
-      <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", color: "var(--ink)" }}>
-        <img src={mascotUrl} alt="Paul" style={{ width: 26, height: 26 }} />
-        <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: "0.04em" }}>PAUL — AI GEO ANALYZER</span>
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, padding: isMobile ? "16px 18px" : "20px clamp(24px, 5vw, 48px)", position: "fixed", top: 0, left: 0, right: 0, background: "color-mix(in srgb, var(--paper) 88%, transparent)", backdropFilter: "blur(8px)", zIndex: 100 }}>
+      <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, minWidth: 0, textDecoration: "none", color: "var(--ink)" }}>
+        <img src={mascotUrl} alt="Paul" style={{ width: 26, height: 26, flexShrink: 0 }} />
+        <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: "0.04em", whiteSpace: "nowrap" }}>{isMobile ? "PAUL" : "PAUL — AI GEO ANALYZER"}</span>
       </a>
-      <a href="/" style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--slate-600)", textDecoration: "none" }}>← Back to home</a>
+      <a href="/" style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--slate-600)", textDecoration: "none", whiteSpace: "nowrap", flexShrink: 0 }}>← Back to home</a>
     </div>
   );
 }
@@ -73,28 +75,28 @@ export function PrivacyPolicyPage() {
         <p style={p}>
           The page analysis runs <strong>entirely locally in your browser</strong>. There are no user
           accounts, no cookies and no persistent host permissions. The extension uses Chrome’s
-          <Code>activeTab</Code> model: it can access a page only after you click the extension icon,
+          {" "}<Code>activeTab</Code> model: it can access a page only after you click the extension icon,
           and only for the currently active tab.
         </p>
 
         <h3 style={h3}>2. Requests to the page being analyzed</h3>
         <p style={p}>
           For each analysis the extension may make up to two requests to the analyzed website itself —
-          <Code>/llms.txt</Code> and <Code>/robots.txt</Code>. Their contents are evaluated only locally
+          {" "}<Code>/llms.txt</Code> and <Code>/robots.txt</Code>. Their contents are evaluated only locally
           and are never forwarded anywhere.
         </p>
 
         <h3 style={h3}>3. HTML report &amp; Google Fonts</h3>
         <p style={p}>
           The generated HTML report loads the <strong>Inter</strong> font from
-          <Code>fonts.googleapis.com</Code>. This is a standard Google Fonts request, which transmits
+          {" "}<Code>fonts.googleapis.com</Code>. This is a standard Google Fonts request, which transmits
           the usual technical data (such as your IP address and browser/user-agent) to Google.
         </p>
 
         <h3 style={h3}>4. Anonymous usage statistics (opt-out)</h3>
         <p style={p}>
           After each fresh analysis the extension sends one anonymous record to
-          <Code>https://api.geo.mauch.rocks/v1/analyses</Code>. The record contains
+          {" "}<Code>https://api.geo.mauch.rocks/v1/analyses</Code>. The record contains
           <strong> exclusively</strong>:
         </p>
         <ul style={{ margin: "0 0 14px", paddingLeft: "1.2em" }}>
@@ -147,7 +149,7 @@ export function PrivacyPolicyPage() {
         <h3 style={h3}>9. Aggregated statistics shown on the site</h3>
         <p style={p}>
           The website may display aggregated statistics derived from sections 4–5, fetched from
-          <Code>api.geo.mauch.rocks/v1/stats</Code>. These are aggregates only — no individual records.
+          {" "}<Code>api.geo.mauch.rocks/v1/stats</Code>. These are aggregates only — no individual records.
         </p>
 
         {/* ===================== CONTROLLER / RIGHTS ===================== */}
@@ -202,7 +204,7 @@ export function PrivacyPolicyPage() {
         <p style={p}>
           <strong>1. Lokale Analyse &amp; Berechtigungen:</strong> Die Analyse läuft vollständig lokal im
           Browser. Keine Konten, keine Cookies, keine persistenten Host-Berechtigungen — Chrome
-          <Code>activeTab</Code>-Modell (Zugriff nur auf den aktiven Tab nach Klick auf das Icon).
+          {" "}<Code>activeTab</Code>-Modell (Zugriff nur auf den aktiven Tab nach Klick auf das Icon).
         </p>
         <p style={p}>
           <strong>2. Requests an die analysierte Website:</strong> Pro Analyse bis zu zwei Requests an die
@@ -211,7 +213,7 @@ export function PrivacyPolicyPage() {
         </p>
         <p style={p}>
           <strong>3. HTML-Report &amp; Google Fonts:</strong> Der HTML-Report lädt die Schriftart Inter von
-          <Code>fonts.googleapis.com</Code> (Google-Fonts-Request mit den üblichen technischen Daten an
+          {" "}<Code>fonts.googleapis.com</Code> (Google-Fonts-Request mit den üblichen technischen Daten an
           Google).
         </p>
         <p style={p}>
@@ -219,7 +221,7 @@ export function PrivacyPolicyPage() {
           anonymer Datensatz an <Code>https://api.geo.mauch.rocks/v1/analyses</Code> gesendet. Inhalt
           ausschliesslich: zufällige Installations-ID (UUID, kein Personenbezug), Extension-Version,
           UI-Sprache, Gesamt-Score, Kategorie-Scores, Schlüssel der ausgelösten Empfehlungen (z.B.
-          <Code>no_llms_txt</Code>), Bewertungsstufe. <strong>Explizit nicht</strong> enthalten: URLs,
+          {" "}<Code>no_llms_txt</Code>), Bewertungsstufe. <strong>Explizit nicht</strong> enthalten: URLs,
           Hostnamen, Seiteninhalte, Titel — auch nicht gehasht. Die Deduplizierung (max. 1 Meldung pro
           Seite/Tag) passiert lokal im Browser. Beim ersten Lauf erscheint ein Hinweis; ein Schalter im
           Panel-Footer deaktiviert die Statistik jederzeit (Einstellung lokal gespeichert).
@@ -248,7 +250,7 @@ export function PrivacyPolicyPage() {
         </p>
         <p style={p}>
           <strong>9.</strong> Die Website zeigt aggregierte Statistiken aus Punkt 4/5 an (Abruf von
-          <Code>api.geo.mauch.rocks/v1/stats</Code> — nur Aggregate, keine Einzeldaten).
+          {" "}<Code>api.geo.mauch.rocks/v1/stats</Code> — nur Aggregate, keine Einzeldaten).
         </p>
 
         <h3 style={h3}>Verantwortliche Stelle &amp; Ihre Rechte</h3>

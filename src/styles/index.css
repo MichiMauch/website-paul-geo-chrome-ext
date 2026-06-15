@@ -76,3 +76,23 @@ body {
 .cl-prose p {
   margin: 0 0 12px;
 }
+/* Long code tokens / URLs in the changelog must wrap, not push the page wide. */
+.cl-prose code,
+.cl-prose a,
+.cl-prose li,
+.cl-prose p {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* ---- Mobile: tame the oversized display headlines so they never push the
+   page horizontally on narrow phones. The desktop floors (64px / 48px) are
+   wider than a 320px viewport for long words like "Geo-Data." / "Overviews." */
+@media (max-width: 600px) {
+  :root {
+    --display-hero: clamp(40px, 12.5vw, 200px);
+    --display-xl: clamp(30px, 9.5vw, 136px);
+    --display-lg: clamp(27px, 8vw, 88px);
+    --display-md: clamp(22px, 6vw, 48px);
+  }
+}
