@@ -173,7 +173,7 @@ function Statement() {
     <section data-screen-label="AI statement" style={{ minHeight: "100vh", background: "var(--paper)", color: "var(--ink)", display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 clamp(24px, 5vw, 72px)" }}>
       <Eyebrow>Scored the way machines read</Eyebrow>
       <DisplayHeadline size="xl" style={{ marginTop: 20, maxWidth: "16ch" }}>
-        Built for *ChatGPT,* *Perplexity* &amp; AI Overviews.
+        Built for *ChatGPT,* *Claude,* *Perplexity* &amp; AI Overviews.
       </DisplayHeadline>
       <p style={{ marginTop: 32, maxWidth: "46ch", fontFamily: "var(--font-sans)", fontSize: "clamp(16px, 1.4vw, 20px)", lineHeight: 1.5, color: "var(--slate-600)" }}>
         Generative Engine Optimization prepares your content for AI-powered search. Paul scores any page 0–30 across six categories — GEO and classic on-page SEO — and tells you exactly what to fix.
@@ -334,13 +334,13 @@ export default function Landing() {
       <FixedNav ctaV={ctaV} />
       <Hero ctaV={ctaV} ambient={ambient} />
       <Statement />
+      <StatsSection />
       <Categories />
       <Marquee />
       <StackDeck dots={showDots} accent="var(--landing-accent)">
         {FEATURES.map((f, i) => <FeatureCard key={i} f={f} i={i} ambient={ambient} demos={demos} />)}
       </StackDeck>
       <Privacy ambient={ambient} />
-      <StatsSection />
       <Outro ctaV={ctaV} ambient={ambient} />
       {grain && <Grain />}
       {cursor && <CursorFollower />}
