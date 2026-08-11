@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Landing from "./landing/Landing.jsx";
+import RadiographLanding from "./v2/Radiograph.jsx";
 import { LegalPage } from "./legal/Legal.jsx";
 import { PrivacyPolicyPage } from "./legal/PrivacyPolicy.jsx";
 import { ChangelogPage } from "./changelog/Changelog.jsx";
@@ -15,6 +16,11 @@ const PATH_VIEW = {
   "/legal-notice": "legal-notice",
   "/changelog": "changelog",
   "/tech-changelog": "tech-changelog",
+  // The previous "Bold & Minimal" landing page, kept reachable after the
+  // redesign so a rollback needs no deploy. /v2 still resolves for anyone
+  // holding a link from the prototype phase.
+  "/v1": "v1",
+  "/v2": "home",
 };
 
 // Legacy #-links → new paths, so old URLs (e.g. shared #impressum) keep working.
@@ -51,7 +57,8 @@ function App() {
     case "legal-notice": return <LegalPage />;
     case "changelog": return <HighlightsPage />;
     case "tech-changelog": return <ChangelogPage />;
-    default: return <Landing />;
+    case "v1": return <Landing />;
+    default: return <RadiographLanding />;
   }
 }
 

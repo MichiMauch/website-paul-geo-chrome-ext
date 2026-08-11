@@ -8,3 +8,6 @@ dist-ssr
 # Mobile audit artifacts (screenshots, DOM snapshots)
 .mobile-audit/
 auth.json
+
+# Impeccable scratch (decision-page payloads)
+.impeccable/

@@ -2,9 +2,23 @@
    Webfonts — Archivo (display voice for "Bold & Minimal" landing)
    SUBSTITUTION: the brand has no licensed display face on file.
    Brief asks for "Inter, Helvetica Now or a striking display
-   face" — Archivo (variable width/weight) from Google Fonts is
-   the stand-in. Replace with licensed files if provided.
+   face" — Archivo (variable width/weight) is the stand-in.
+   Replace with licensed files if provided.
    Extension UI itself uses the system stack (no webfont).
+
+   Self-hosted rather than @import-ed from Google: this stylesheet
+   is loaded on every route, so a third-party request here blocks
+   first paint on the /v2 page whose whole argument is that nothing
+   leaves your browser. Latin variable subset, both axes (wdth
+   62–125, wght 100–900) — the landing page sets font-stretch, so
+   the width axis has to be in the file.
    ============================================================ */
 
-@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap");
+@font-face {
+  font-family: "Archivo";
+  src: url("../fonts/archivo-var.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+}
