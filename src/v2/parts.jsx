@@ -49,6 +49,27 @@ export function useLit(threshold = 0.22) {
   return [ref, lit];
 }
 
+/* Unlike useLit, this keeps watching: a demonstration that plays itself should
+   run while it is on screen and stop when it is not. */
+export function useVisible(threshold = 0.25) {
+  const ref = React.useRef(null);
+  const [visible, setVisible] = React.useState(false);
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setVisible(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => setVisible(entries.some((e) => e.isIntersecting)),
+      { threshold }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [threshold]);
+  return [ref, visible];
+}
+
 export function Expose({ delay = 0, as: As = "div", style, children, ...rest }) {
   const [ref, lit] = useLit();
   return (

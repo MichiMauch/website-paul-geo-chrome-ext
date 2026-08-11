@@ -44,6 +44,7 @@
   --em: #33cccc;
   --em-hot: #5eeaea;
   --em-deep: #0f5f5f;
+  --em-pale: #eafcfc; /* text on --em-deep, the only pairing that needs it */
   --em-wash: rgba(51, 204, 204, 0.1);
 
   /* ---- A finding is marked, never colored in ---- */
@@ -255,7 +256,7 @@
 .rg-paper .rg-btn--ghost:hover,
 .rg-paper .rg-btn--ghost:focus-visible {
   background: var(--em-deep);
-  color: #eafcfc;
+  color: var(--em-pale);
 }
 
 /* ---- The six disciplines read as one band. Explicit column counts, because

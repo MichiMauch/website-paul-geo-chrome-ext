@@ -17,6 +17,8 @@ import {
   Perforation,
   Icon,
   useLit,
+  useVisible,
+  useReduced,
   useSettle,
   STORE_URL,
   REPO_URL,
@@ -293,15 +295,49 @@ function useLeader(active, wrapRef, listRefs, rowRefs) {
   return leader;
 }
 
+/* How long each finding is held while the section reads itself. Long enough
+   to follow the leader to its region and read the sentence. */
+const AUTO_HOLD_MS = 2600;
+
 function Reading() {
   const [active, setActive] = React.useState(null);
   const [sticky, setSticky] = React.useState(false);
+  /* The section demonstrates itself until someone takes the controls. After
+     that it never starts again — a display that keeps interrupting the person
+     already using it is worse than one that never moved. */
+  const [auto, setAuto] = React.useState(true);
+  const reduced = useReduced();
   const [ref, lit] = useLit(0.4);
+  const [seenRef, onScreen] = useVisible(0.3);
   const total = useSettle(TOTAL, lit, 1400);
   const wrapRef = React.useRef(null);
   const listRefs = React.useRef({});
   const rowRefs = React.useRef({});
   const leader = useLeader(active, wrapRef, listRefs, rowRefs);
+
+  /* Two ways to take the controls. Pointing at a finding hands over and that
+     finding is what stays marked. Merely moving across the section hands over
+     too, and then the cycle's last pick is released rather than left standing.
+     The ref is what makes the order of mousemove and mouseenter irrelevant:
+     whichever arrives first wins, the second is a no-op. */
+  const autoRef = React.useRef(true);
+  const stopAuto = React.useCallback((release) => {
+    if (!autoRef.current) return;
+    autoRef.current = false;
+    setAuto(false);
+    if (release) setActive(null);
+  }, []);
+
+  React.useEffect(() => {
+    if (!auto || reduced || !onScreen) return;
+    let i = 0;
+    setActive(FINDINGS[0].id);
+    const iv = setInterval(() => {
+      i = (i + 1) % FINDINGS.length;
+      setActive(FINDINGS[i].id);
+    }, AUTO_HOLD_MS);
+    return () => clearInterval(iv);
+  }, [auto, reduced, onScreen]);
 
   return (
     <Plate label="How a page is scored">
@@ -327,6 +363,7 @@ function Reading() {
           ref.current = el;
           wrapRef.current = el;
         }}
+        onMouseMove={() => stopAuto(true)}
         style={{
           position: "relative",
           marginTop: "clamp(48px, 7vh, 96px)",
@@ -337,7 +374,10 @@ function Reading() {
         }}
       >
         {leader && (
+          /* Keyed on the finding: the draw animation runs on mount, so without
+             a fresh element the cycle would only ever animate its first step. */
           <svg
+            key={active}
             aria-hidden="true"
             width={leader.w}
             height={leader.h}
@@ -368,9 +408,11 @@ function Reading() {
         )}
 
         {/* The findings, in the extension's own words */}
-        <div>
+        <div ref={seenRef}>
           <Meta style={{ marginBottom: "clamp(14px, 2vh, 22px)" }}>
-            Findings on this page · select one to locate it
+            {auto && !reduced
+              ? "Findings on this page · point at one to hold it"
+              : "Findings on this page · select one to locate it"}
           </Meta>
           <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
             {FINDINGS.map((f) => (
@@ -381,11 +423,18 @@ function Reading() {
                     listRefs.current[f.id] = el;
                   }}
                   aria-pressed={active === f.id}
-                  onMouseEnter={() => !sticky && setActive(f.id)}
+                  onMouseEnter={() => {
+                    stopAuto(false);
+                    if (!sticky) setActive(f.id);
+                  }}
                   onMouseLeave={() => !sticky && setActive(null)}
-                  onFocus={() => !sticky && setActive(f.id)}
+                  onFocus={() => {
+                    stopAuto(false);
+                    if (!sticky) setActive(f.id);
+                  }}
                   onBlur={() => !sticky && setActive(null)}
                   onClick={() => {
+                    stopAuto(false);
                     const same = sticky && active === f.id;
                     setSticky(!same);
                     setActive(same ? null : f.id);
@@ -568,7 +617,7 @@ function CopyBlock({ code }) {
           top: 12,
           right: 12,
           background: copied ? "var(--em-deep)" : "var(--paper-ink)",
-          color: copied ? "#eafcfc" : "var(--paper-lit)",
+          color: copied ? "var(--em-pale)" : "var(--paper-lit)",
         }}
       >
         <Icon name={copied ? "check" : "copy"} size={13} />

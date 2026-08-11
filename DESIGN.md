@@ -177,7 +177,13 @@ The specimen is grayscale, always. Six steps from the plate up to the lit edge, 
 - **Paper** (`#eceeed`) / **Paper Lit** (`#f6f7f6`): the printed report's ground, and the lifted panel (code block, edge strip) sitting on it.
 - **Paper Ink** (`#10161a`) / **Paper d3** (`#5b6669`) / **Paper Rule** (`#cfd4d3`): the report's type, its secondary type, and its hairlines.
 
+- **Emission Pale** (`#eafcfc`, `--em-pale`): type knocked out of `--em-deep`. The only pairing that needs it; not a general light.
+
 `--plate-lit` (`#11171a`) is declared in `radiograph.css` but used nowhere in the build. Either use it or delete it; do not treat it as an established step.
+
+### The specimen's foreign palette — a deliberate exception
+
+`RenderedBlocks` and the light half of `Chrome` in `src/v2/Specimen.jsx` carry roughly ten literal greys (`#dfe3e1`, `#59635f`, `#3d4643`, `#7b8480`, `#e2e6e4`, `#c4cbc8`, `#dde1df`, `#79837f` …) that belong to no token here, and that is correct. That layer is not this design system — it renders *somebody else's web page* lying on the light box, the thing being measured. Giving it our tokens would make the specimen look like part of the instrument and destroy the whole point of the wipe. A design-system detector will flag these every time; they stay flagged. Do not tokenise them, and do not extend this exception to anything outside the rendered specimen.
 
 ### Named Rules
 
