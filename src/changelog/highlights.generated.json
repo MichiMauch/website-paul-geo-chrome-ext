@@ -1,38 +1,34 @@
 {
-  "intro": "Paul AI GEO Analyzer helps you optimize your website for AI search and classic SEO by providing actionable insights and recommendations. It scores your pages and highlights areas for improvement, making it easier to enhance your online presence.",
+  "intro": "Paul AI GEO Analyzer checks how well your web pages are prepared for AI search tools like ChatGPT, Perplexity and Google AI Overviews, as well as classic search engines. It shows what is working, what is missing, and exactly how to fix it, even if you have no technical background.",
   "highlights": [
     {
-      "title": "New Domain Overview",
-      "description": "Quickly see all analyzed pages of your website, sorted by those needing the most attention, making it easier to prioritize improvements."
+      "title": "Ready-to-use fixes for every recommendation",
+      "description": "Each recommendation comes with a copy-and-paste fix you can hand to your team. Clear labels show whether the editorial team or your web agency should handle it, and roughly how much time it takes."
     },
     {
-      "title": "Focused Recommendations",
-      "description": "Get a clear, actionable instruction for the weakest area of your page, helping you know exactly where to start for the best results."
+      "title": "Clear reports you can share or print",
+      "description": "Reports are easy to scan, with the most urgent items first. Printing or saving as PDF gives you a clean, multi-page document with page numbers, ready to share with decision makers."
     },
     {
-      "title": "User-Friendly Interface",
-      "description": "Enjoy a smoother experience with helpful hints and a friendly layout that guides you through the analysis process without confusion."
+      "title": "See what changed since your last check",
+      "description": "After you make improvements, the extension shows which issues were fixed and which new ones appeared, so you can see your progress at a glance."
     },
     {
-      "title": "In-Page Issue Highlighting",
-      "description": "Easily identify issues directly on your webpage with visual markers, allowing you to see what needs fixing right where it matters."
+      "title": "Compare sites and track progress over time",
+      "description": "Analyze several pages across a whole website, compare runs before and after a change, and spot regressions early. Overview pages make it easy to see which pages need attention first."
     },
     {
-      "title": "One-Click Fix Snippets",
-      "description": "Quickly generate and copy code snippets for recommended fixes, turning complex suggestions into easy actions you can implement immediately."
+      "title": "More accurate checks for real-world pages",
+      "description": "Pages built with modern tools, online shops, local businesses and start pages are now judged more fairly. Many false warnings and missed content have been fixed, so scores reflect what readers and AI tools actually see."
     },
     {
-      "title": "Enhanced Readability and SEO Checks",
-      "description": "Benefit from new checks for readability and SEO, ensuring your content is not only optimized for AI but also user-friendly."
+      "title": "Better insight into what AI crawlers see",
+      "description": "The extension now checks whether AI bots can reach your content, including server and firewall blocks, and whether your text is visible without JavaScript. This helps you spot content that AI tools might never read."
     },
     {
-      "title": "Multi-Language Support",
-      "description": "Access the tool in your preferred language, making it more accessible and easier to understand for users around the world."
-    },
-    {
-      "title": "Agency Partnership Opportunities",
-      "description": "Find help easily with a direct link to professional services for website optimization, ensuring you have support when you need it."
+      "title": "Automated checks for teams and agencies",
+      "description": "A command-line version can run the same analysis in your own workflow and stop releases that drop below a target score, so quality stays consistent over time."
     }
   ],
-  "model": "gpt-4o-mini"
+  "model": "claude-haiku-5-5"
 }
